@@ -1,0 +1,33 @@
+
+\usepackage{pdfpages} % Para insertar páginas PDF
+
+% Incluir portada, autoridades y autores al inicio
+\AtBeginDocument{
+    \includepdf[pages=-,fitpaper=true]{Primeras_pag.PDF}
+    \pagestyle{fancy}
+}
+
+\usepackage{fontspec}  % Permite usar fuentes del sistema
+\setmainfont{Calibri}  % Configura Calibri como fuente principal
+
+\usepackage{fancyhdr}  % Paquete para personalizar encabezados y pies de página
+\usepackage{graphicx}  % Paquete para incluir imágenes
+
+% Configuración del encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}  % Limpia los encabezados y pies predeterminados
+
+% Encabezado: inserta una imagen en la parte superior
+\fancyhead[C]{\includegraphics[width=\textwidth]{MEMBRETE_FONDO_BLANCO.png}}
+
+% Pie de página: imagen con altura reducida y número de página a la derecha
+\fancyfoot[C]{\includegraphics[height=1.0cm]{PIE_PAG.png}}  % Ajusta el tamaño a gusto
+\fancyfoot[R]{\thepage}  
+
+% Ajustar la distancia entre el texto y el pie de página
+\setlength{\footskip}{28pt}  % Podés ajustar más si queda muy separado o muy junto
+
+
+% Opcional: Ajustar los márgenes del documento para las imágenes
+\setlength{\headheight}{50pt}  % Altura del encabezado (ajústala según el tamaño de la imagen)
+\setlength{\footskip}{30pt}  % Distancia entre el texto y el pie de página

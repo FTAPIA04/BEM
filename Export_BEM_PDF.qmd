@@ -1,0 +1,466 @@
+---
+format: 
+  pdf:
+    include-in-header: header-footer.tex
+    toc: false  # Genera un índice de contenido
+    toc-depth: 5  # Nivel de profundidad del índice
+---
+
+```{r, include=FALSE}
+source("0.R")
+```
+
+\renewcommand{\contentsname}{Índice}
+
+\tableofcontents
+\newpage
+
+## Introducción
+
+Este boletín es realizado por la Dirección General de Epidemiología con periodicidad mensual. Está dirigido a los equipos de asistencia, gestión y vigilancia en salud y se encuentra disponible para la comunidad interesada en la página web del Ministerio de Salud de la provincia del Neuquén. Su propósito es ofrecer información actualizada sobre los eventos sanitarios enmarcados a nivel nacional como de notificación obligatoria.
+
+Se construye de manera colectiva e interdisciplinaria y es posible gracias al aporte de todos los actores involucrados en cada uno de los niveles de atención y gestión; al compromiso de los efectores de salud públicos y privados que se involucran en esta tarea, y al intercambio permanente con las distintas coordinaciones de las regiones de nuestra provincia.
+
+En cuanto a la organización del presente documento, se destacan dos secciones. En la primera de ellas se presentan los datos de los eventos sanitarios que se monitorean de manera rutinaria y que se actualizan mes a mes. En la segunda, se desarrolla un evento priorizado por su importancia estacional o de gestión, tanto a nivel provincial como nacional, el cual se modifica mensualmente. A continuación, se analizan los datos de las semanas epidemiológicas (SE) `r SE_BEM` de los años 2020 - `r ANIO_max`.
+
+## **Consideraciones metodológicas**
+
+La fuente de información para la primera sección de este documento es el Sistema Nacional de Vigilancia en Salud (SNVS) 2.0, en sus módulos de clínica y listados nominales. La fecha de exportación[^1] para los datos del módulo de clínica es diferente de acuerdo al periodo analizado. En relación al apartado de Evento priorizado, se incorporan otras fuentes de información con el objetivo de complementar y enriquecer la mirada sobre el mismo.
+
+[^1]: Fecha de exportación: fecha en la que Nación realiza extracción de datos.
+
+La última actualización del Manual de Normas y Procedimientos de Vigilancia y Control de ENO[^2] introdujo cambios en la modalidad y periodicidad de notificación de algunos eventos que se trabajan en el presente documento, los cuales se detallan a continuación. 
+
+[^2]: Evento de Notificación Obligatoria.
+
+\newpage
+
+**Modificaciones implementadas en los ENO**
+
+| Evento | Año de implementación | Modalidad actual de notificación |
+|----|----|----|
+| Parotiditis | 2023 | Nominal individualizada |
+| Internaciones por IRAG[^3] | 2023 | Nominal individualizada |
+| Lesiones en el hogar | 2023 | Sólo internaciones - agrupada |
+| Siniestros viales | 2023 | Sólo internaciones - agrupada |
+| Mordeduras de perros | 2023 | De ENO provincial a nacional - agrupada |
+| Sífilis | 2024 | Nominal individualizada |
+
+[^3]: Infecciones Respiratorias Agudas Graves.
+
+La notificación de todos los eventos detallados en la tabla es de periodicidad semanal.
+
+Para la vigilancia de IRA[^4] coexisten las estrategias que se resumen en la siguiente tabla:
+
+[^4]: Infecciones Respiratorias Agudas.
+
+![](componentes_vigilancia_IRA.jpg){fig-align="center"}
+
+~Fuente: Infecciones respiratorias agudas. Guía para la vigilancia epidemiológica y recomendaciones para la prevención y control~
+
+~(Ministerio de Salud de la Nación, 2024).~
+
+Los datos de los años 2020 en adelante, proceden de exportaciones del SNVS 2.0 del módulo agrupado de clínica, facilitadas por el Ministerio de Salud de la Nación. Para algunos eventos disponemos de series históricas más extensas, tal es la situación de las IRA y de diarrea aguda. Esas bases de datos fueron construidas por la Dirección de Epidemiología.
+
+El procesamiento, análisis e interpretación de la información fueron realizados tomando como punto de partida la tríada epidemiológica de tiempo, lugar y persona.
+
+En relación al tiempo, la unidad que se adopta es la de SE, por su correspondencia con la modalidad de notificación. Por ello, el recorte de semanas empleado para cada boletín se ajusta de manera aproximada, pero no exacta, con el mes bajo análisis, siendo en algunas ocasiones cuatri y en otras pentasemanal. 
+
+En el análisis de la frecuencia de casos en el tiempo, se utilizaron gráficos que describen la distribución por SE para dar cuenta de la evolución en la totalidad de los eventos. Para  mostrar la variación en relación a los años previos, se recurrió a dos estrategias: en todos los apartados, el porcentaje de variación interanual que acompaña a la cifra absoluta de eventos notificados; y en los de IRA y diarreas agudas, corredores endémicos que posibilitan ponderar de manera más apropiada la ocurrencia de casos respecto a lo esperado.
+
+La metodología utilizada para la realización de los corredores endémicos es la descrita por Marcelo Bortman (1999)[^5]. Para su construcción utilizamos los datos provenientes de la notificación agrupada del SNVS 2.0 (o su homólogo previo, según corresponda) de los últimos 7 años, excluyendo aquellos correspondientes a 2020 y 2021, por considerar que la situación pandémica de COVID-19 podría distorsionar la conformación de los mismos.
+
+[^5]: Bortman M. (1999). Elaboración de corredores o canales endémicos mediante planillas de cálculo. Revista Panamericana de Salud Pública \[Internet\]. 5(1) \[consultado 6 jun 2023\]. Disponible en: <https://bit.ly/3X5O1TJ>
+
+En cuanto a la dimensión espacial, para los datos del módulo de clínica del SNVS 2.0 la localidad a la que se atribuyen los casos es la del efector que los notifica. Como unidades geográficas, las localidades se muestran agrupadas en las siete regiones en las que se organiza el sistema de salud provincial. Los datos se presentan en términos relativos como incidencia acumulada, relacionando los casos con la población en la que se originaron. Esto facilita la comprensión de la magnitud del evento de salud en cuestión y la comparación entre las distintas regiones.  
+
+Para el cálculo de las tasas se utiliza el total de población como denominador. El mismo corresponde al proyectado por la Dirección Provincial de Estadísticas y Censos de Neuquén para los distintos años, distribuido por regiones. En cuanto al numerador se toman en consideración las cuatro o cinco semanas establecidas, o bien se utiliza la cifra de eventos notificados acumulados desde la primera semana epidemiológica del año hasta la última semana que se incluye en el boletín, según corresponda a tasas de incidencia de período o acumulada. En la mayoría de los casos se utiliza la amplificación cada 10000 habitantes para facilitar las comparaciones; en eventos de baja frecuencia, el factor es cada 100000 habitantes.
+
+En cuanto a la categoría de persona, se toman diferentes estrategias para mostrar la distribución de los casos por edad, dado que dicha variable se halla disponible en la base de datos agrupada de clínica en grupos etarios predefinidos. Además, en determinados eventos se realizaron agrupaciones propias atendiendo a sus características clínicas y epidemiológicas. Estos nuevos grupos, se grafican en función de la evolución de la composición etaria por semanas epidemiológicas, a fin de poder valorar la existencia o no de estacionalidad en relación a este aspecto.
+
+Por último, en relación a la variable sexo, la misma se imputa a partir de los datos provenientes del Registro Nacional de las Personas (ReNaPer). El tipo de registros disponibles no posibilita aún incorporar la noción de género.
+
+\newpage
+
+## **Infecciones respiratorias agudas**
+
+```{r, echo=FALSE, fig.width=14, fig.height=2}
+indicador_IRA
+```
+
+```{r, echo=FALSE, warning=FALSE, fig.width=7,fig.height=2}
+IRA_treemap 
+```
+
+Se notificaron un total de `r total_indicador` infecciones respiratorias agudas (IRA) a nivel provincial. Esto representa `r IRA_texto_variacion` del `r RESPI_variacion_porcentual_texto` en relación al mismo periodo del año anterior.
+
+El mayor porcentaje de casos notificados es de `r evento1` , con el `r porcentaje1` %. Luego, se ubican las `r evento2` con el `r porcentaje2` %, las `r evento3` y `r evento4` con el `r porcentaje3` % y `r porcentaje4` % respectivamente.
+
+\newpage
+
+### Distribución temporal de casos notificados de internados y/o fallecidos por COVID o IRA y por UC[^6]-IRAG según semana epidemiológica.
+
+[^6]: UC: unidad centinela
+
+Desde SE `r VR_min_SE` /`r VR_min_anio` hasta SE `r SE_max`/`r ANIO_max` .Provincia del Neuquén (n= `r VR_total_evolutivo`)
+
+```{r, echo=FALSE,fig.width=20, fig.height=8}
+vr_grafico_evolutivo
+```
+
+### Casos notificados de internados y/o fallecidos por COVID o IRA y por UC-IRAG por grupos etarios.
+
+Desde SE `r SE_min`/`r ANIO_max` hasta SE `r SE_max`/`r ANIO_max` . Provincia del Neuquén (n = `r COVID_IRA_UCIRAG`)
+
+```{r, echo=FALSE,fig.width=20, fig.height=8}
+VR_grafico_grupoetario4
+```
+
+La edad mínima de las personas internadas y/o fallecidas por COVID-IRA es `r edad_min_covid_ira` y la máxima `r edad_max_covid_ira`. El promedio de edad es `r edad_promedio_covid_ira` años. Por otro lado, en lo que respecta a UC-IRAG, la edad mínima es `r edad_min_UC_IRAG` y la máxima `r edad_max_UC_IRAG`. El promedio de edad es `r edad_promedio_UC_IRAG` años.
+
+\newpage
+
+### Casos de infecciones respiratorias agudas en atención ambulatoria por grupos etarios, según presentación clínica
+
+Desde SE `r SE_min` / `r ANIO_max` hasta SE `r SE_max` / `r ANIO_max` . Provincia del Neuquén (n = `r cant_NAC_BQL_ETI`)
+
+```{r, echo=FALSE,fig.width=25, fig.height=10}
+BQL_ETI_NAC_grafico_grupoetario3
+```
+
+Los casos de ETI se concentran principalmente en el grupo etario de `r ETI_grupoedad_max`, representando el `r ETI_porcentaje_max` % (N=`r ETI_grupoedad_max_cantidad`) de los casos notificados de este evento (N=`r ETI_cantidad`). El grupo poblacional en el que se notificaron la menor cantidad de casos es `r ETI_grupoedad_min` (N=`r ETI_grupoedad_min_cantidad`) casos notificados.
+
+En cuanto a los casos de neumonía notificados en las semanas de este boletín (N=`r NAC_cantidad`), el grupo etario que prevalece es el de `r NAC_grupoedad_max` , con el `r NAC_porcentaje_max` % de los casos notificados (N=`r NAC_grupoedad_max_cantidad`). El grupo de edad `r NAC_grupoedad_min` aporta la menor cantidad de casos notificados (N=`r NAC_grupoedad_min_cantidad`).
+
+Por último, los casos notificados de bronquiolitis se concentran en infancias de `r BQL_grupoedad_max`, siendo el `r BQL_porcentaje_max` % (N=`r BQL_grupoedad_max_cantidad`) del total (N=`r BQL_cantidad`).
+
+\newpage
+
+## **Enfermedad tipo influenza (ETI)**
+
+En las semanas analizadas, se notificaron un total de `r ETI_cantidad_SE_BEM` casos de ETI a nivel provincial. Hubo `r ETI_texto_variacion` del `r ETI_variacion_porcentual`% en relación al mismo periodo del año anterior.
+
+### Distribución temporal de casos de ETI por semana epidemiológica, según grupos etarios
+
+Desde SE 1/2020 hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén (n = `r ETI_total_evolutivo`)
+
+```{r, echo=FALSE,fig.width=25, fig.height=12}
+ETI_grafico_grupoetario_acumulado
+```
+
+```{r, echo=FALSE,fig.width=25, fig.height=7}
+ETI_grafevolutivo
+
+```
+
+\newpage
+
+### Corredor endémico semanal de ETI[^7].
+
+[^7]: Todos los corredores presentados en este BEM son construidos en base a los datos correspondientes al período 2015 ‐ 2023, excluyendo los años pandémicos (2020 y 2021).
+
+`r ANIO_max` . Provincia del Neuquén.
+
+![](ETI_corredor.png){fig-align="center" width="513"}
+
+### Casos notificados de ETI por año.
+
+Desde SE 1/2022 hasta `r SE_max` /`r ANIO_max` . Provincia del Neuquén.
+
+```{r, echo=FALSE,warning=FALSE,fig.width=20,fig.height=7 }
+ETI_grafico_anios_V3
+
+```
+
+\newpage
+
+## **Neumonía**
+
+En las semanas analizadas, se notificaron un total de `r NEUMONIA_cantidad_SE_BEM` casos de Neumonía a nivel provincial. Hubo `r NEUMONIA_texto_variacion` del `r NEUMONIA_variacion_porcentual`% en relación al mismo periodo del año anterior.
+
+### Distribución temporal de casos de neumonía por semana epidemiológica, según grupos etarios
+
+Desde SE 1/2020 hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén (n = `r NEUMONIA_total_evolutivo`)
+
+```{r, echo=FALSE,fig.width=25, fig.height=15}
+
+NEUMONIA_grafico_grupoetario_acumulado
+```
+
+```{r, echo=FALSE,warning=FALSE, fig.width=25, fig.height=7}
+NEUMONIA_grafevolutivo
+```
+
+\newpage
+
+### Corredor endémico semanal de neumonía.
+
+`r ANIO_max` . Provincia del Neuquén.
+
+![](NEUMONIA_corredor.png){width="524"}
+
+### Casos notificados de neumonía por año.
+
+Desde SE 1/2022 hasta `r SE_max` /`r ANIO_max` . Provincia del Neuquén.
+
+```{r, echo=FALSE,warning=FALSE,fig.width=20,fig.height=7}
+NAC_grafico_anios_V3
+```
+
+\newpage
+
+## **Bronquiolitis**
+
+En las semanas analizadas, se notificaron un total de `r BQL_cantidad_SE_BEM` casos de bronquiolitis a nivel provincial. Hubo `r BQL_texto_variacion` del `r BQL_variacion_porcentual` % en relación al mismo periodo del año anterior.
+
+### Distribución temporal de casos de bronquiolitis por semana epidemiológica, según grupos etarios.
+
+Desde SE 1/2020 hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén (n = `r BQL_total_evolutivo`)
+
+```{r, echo=FALSE,fig.width=33, fig.height=15}
+BQL_grafico_grupoetario_acumulado
+```
+
+```{r, echo=FALSE,warning=FALSE, fig.width=25, fig.height=7}
+BQL_grafevolutivo
+```
+
+\newpage
+
+### Corredor endémico semanal de bronquiolitis.
+
+`r ANIO_max` . Provincia del Neuquén.
+
+![](BQL_corredor.png){width="523"}
+
+### Casos notificados de bronquiolitis por año.
+
+Desde SE 1/2022 hasta `r SE_max` /`r ANIO_max` . Provincia del Neuquén.
+
+```{r, echo=FALSE,warning=FALSE,fig.width=20,fig.height=7}
+BQL_grafico_anios_V3
+```
+
+\newpage
+
+## **Vigilancia universal de IRAG**
+
+### Distribución temporal de determinaciones positivas en pacientes internados y/o fallecidos según agente etiológico por semana epidemiológica
+
+Desde SE 1/2024 hasta SE `r SE_max` /`r ANIO_max`. Provincia del Neuquén (n = `r cant_vigilancia_universal`).
+
+```{r, echo=FALSE,warning=FALSE,fig.width=33,fig.height=15}
+grafico_vigilancia_universal_evolutivo
+```
+
+### Distribución temporal de determinaciones positivas de influenza en pacientes internados y/o fallecidos según tipo y subtipo por semana epidemiológica.
+
+Desde SE 1/2024 hasta SE `r SE_max` /`r ANIO_max`. Provincia del Neuquén (n = `r cant_influenza`).
+
+```{r, echo=FALSE,warning=FALSE,fig.width=33,fig.height=11}
+grafico_influenza
+```
+
+\newpage
+
+### Porcentaje de positividad de SARS-CoV-2, VSR e Influenza en internados y/o fallecidos por semana epidemiológica
+
+Desde SE 1/2024 hasta SE `r SE_max` /`r ANIO_max`. Provincia del Neuquén.
+
+```{r, echo=FALSE,warning=FALSE, fig.width=25,fig.height=9}
+grafico_positividad_lineas
+```
+
+En lo que respecta a la circulación de influenza, en el año 2024, la mayor concentración de circulación fue entre las SE 19 y 27, siendo el mayor porcentaje de positividad 5,9% en la SE 24. En el resto de las semanas del año, la circulación está presente, con porcentajes de positividad menores al 2%. `r texto_analisis_FLU`
+
+En el caso de VSR, la mayor concentración de circulación fue a partir de la SE 22, extendiéndose hasta la SE 43. El mayor porcentaje fue en la SE31, con el 8,4%. `r texto_analisis_VSR`
+
+En cuanto al SARS-CoV-2 fue elevada en las primeras 10 semanas, siendo el mayor porcentaje de positividad en la SE6 con el 15%. `r texto_analisis_COVID`
+
+\newpage
+
+## **Diarrea aguda**
+
+```{r, echo=FALSE, fig.width=14, fig.height=2}
+
+indicador_diarreas
+
+```
+
+En las semanas analizadas, se notificaron un total de `r DA_cantidad_SE_BEM` casos de diarrea aguda a nivel provincial. Hubo una disminución del `r DA_variacion_porcentual` % en relación al mismo periodo del año anterior.
+
+### Distribución temporal de casos de diarrea aguda por semana epidemiológica.
+
+Desde SE 1/2020 hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén (n = `r DA_total_evolutivo`)
+
+```{r, echo=FALSE,fig.width=12, fig.height=8}
+
+grafico_DA_evolutivo
+```
+
+\newpage
+
+### Distribución temporal de casos de diarrea aguda por SE, según grupos de edad.
+
+Desde SE 1/2020 hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén (n = `r DA_total_evolutivo`)
+
+```{r, echo=FALSE,fig.width=33, fig.height=15}
+DA_grafico_grupoetario_acumulado
+```
+
+### Diarrea aguda por grupos etarios.
+
+Desde SE `r SE_min` hasta SE `r SE_max`/`r ANIO_max` . Provincia del Neuquén (n = `r DA_cantidad_SE_BEM`)
+
+```{r, echo=FALSE}
+DA_grafico_grupoetario
+```
+
+\newpage
+
+### Distribución absoluta de casos de diarrea aguda por región, según grupos de edad.
+
+Desde SE `r SE_min` hasta SE `r SE_max`/`r ANIO_max` . Provincia del Neuquén (n = `r DA_cantidad_SE_BEM`)
+
+```{r, echo=FALSE, fig.height=3}
+DA_grafico_regiones
+```
+
+### Corredor endémico semanal. Diarrea aguda.
+
+`r ANIO_max` . Provincia del Neuquén.
+
+![](DA_corredor.png){fig-align="center" width="536"}
+
+\newpage
+
+## **Internaciones por lesiones en el hogar**
+
+Desde SE `r SE_min`/`r ANIO_max` hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén (n = `r lesiones_hogar_SE_BEM`)
+
+```{r, echo=FALSE,fig.width=14,fig.height=2}
+library(grid)
+grid.draw(indicador_lesiones)
+```
+
+```{r, echo=FALSE, warning=FALSE, fig.width=7,fig.height=2}
+lesiones_treemap
+```
+
+### Distribución temporal de internaciones por lesiones en el hogar por semana epidemiológica.
+
+Desde SE 21/2023 hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén (n = `r lesiones_total`)
+
+```{r, echo=FALSE,fig.width=13, fig.height=5}
+lesiones_grafico_evolutivo
+
+```
+
+\newpage
+
+## **Lesiones por mordedura de perro (ambulatorias)**
+
+Desde SE `r SE_min` /`r ANIO_max` hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén (n = `r mordeduras_cantidad_SE_BEM`)
+
+```{r, echo=FALSE,fig.width=14,fig.height=2}
+grid.draw(indicador_mordedura)
+```
+
+```{r, echo=FALSE,fig.width=7,fig.height=2}
+mordeduras_treemap
+```
+
+### Distribución temporal de mordedura de perro por semana epidemiológica.
+
+Desde SE 1/2020 hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén (n = `r mordeduras_total`)
+
+```{r,echo=FALSE,fig.width=33, fig.height=15}
+mordeduras_grafico_evolutivo
+```
+
+### Incidencia acumulada de casos de mordedura de perro cada 10000 habitantes por año, según región.
+
+Desde SE `r SE_min` hasta SE `r SE_max` de los años 2020 hasta `r ANIO_max` . Provincia del Neuquén.
+
+```{r, echo=FALSE, warning=FALSE}
+mordedura_incidencia_grafico
+```
+
+\newpage
+
+## **Internaciones por siniestros viales**
+
+Desde SE 1/2020 hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén (n = `r siniestros_viales_SEBEM`)
+
+```{r, echo = FALSE , warning=FALSE, fig.width=14,fig.height=2}
+indicador_accidentes
+```
+
+```{r, echo=FALSE,fig.width=7,fig.height=2}
+siniestrosviales_treemap
+```
+
+### Distribución temporal de internaciones por siniestros viales por semana epidemiológica.
+
+Desde SE 21/2023 hasta SE `r SE_max`/`r ANIO_max` . Provincia del Neuquén (n = `r siniestros_viales_total`)
+
+```{r,echo=FALSE, fig.width=33, fig.height=15}
+siniestros_viales_grafico_evolutivo
+
+```
+
+\newpage
+
+### Internaciones por siniestros viales por grupos etarios.
+
+Desde SE `r SE_min`/`r ANIO_max` hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén (n = `r siniestros_viales_SEBEM`)
+
+```{r, echo=FALSE}
+siniestrosviales_grafico_grupoetario
+```
+
+\newpage
+
+## **Infecciones inmunoprevenibles**
+
+```{r, echo=FALSE,fig.width=14,fig.height=2}
+indicador_varicela
+```
+
+En las semanas analizadas, se notificaron un total de `r varicela_SEBEM` casos de varicela a nivel provincial. La variación porcentual es del `r varicela_variacion_porcentual` % con respecto al mismo periodo del año anterior.
+
+### Distribución temporal de casos de infecciones inmunoprevenibles por semana epidemiológica, según tipo de infección.[^8]
+
+[^8]: A partir de la SE 30 del 2023, el evento parotiditis cambió la modalidad de registro de agrupada a nominal.
+
+Desde SE 1/2020 hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén (n = `r IP_total` )
+
+```{r, echo=FALSE,fig.width=33, fig.height=20}
+IP_grafico_evolutivo
+```
+
+\newpage
+
+### Distribución de casos de varicela por semana epidemiológica, según grupos etarios.
+
+Desde SE 1/2020 hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén (n = `r Varicela_evolutivo_total` )
+
+```{r, echo=FALSE, fig.width=33, fig.height=15}
+IP_grafico_grupoetario_acumulado
+```
+
+### Casos de varicela por grupos etarios.
+
+Desde SE `r SE_min` /`r ANIO_max` hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén (n = `r varicela_SEBEM` )
+
+```{r, echo=FALSE}
+varicela_grafico_grupoetario
+```
+
+### Incidencia acumulada de casos de infecciones inmunoprevenibles cada 10000 habitantes por año, según tipo de infección y región.
+
+Desde SE `r SE_min` hasta SE `r SE_max` de los años 2020 hasta `r ANIO_max` . Provincia del Neuquén.
+
+```{r, echo=FALSE}
+varicela_incidencia_grafico
+```
