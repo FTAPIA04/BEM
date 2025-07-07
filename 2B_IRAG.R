@@ -30,6 +30,7 @@ VR_NOMINAL_SINDUPLICADOS <- VR_NOMINAL_SINDUPLICADOS %>%
 #armo una tabla con los casos notificados por SE y AÑO
 vr_evolutivo <- VR_NOMINAL_SINDUPLICADOS %>% 
   group_by(AÑO, SEPI_,EVENTO)%>% 
+  filter(AÑO>=2024) %>% 
   summarise(casos = n(), .groups = "drop") %>% 
   mutate(AÑO_SE = paste(SEPI_, AÑO, sep = "-")) %>% 
   arrange(AÑO, SEPI_) %>% 

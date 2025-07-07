@@ -231,6 +231,8 @@ grafico_influenza
 # positividad semanal
 positividad_semanal <- VRNOMINAL_EVENTOCASO %>%
   filter(AÑO >= 2024) %>%
+  filter(
+    AÑO < 2025 | (AÑO == 2025 & SEPI_ <= SE_BEM_MAX)) %>% 
   select(AÑO, IDEVENTOCASO, SEPI_, starts_with("DETERMINACION_")) %>%
   pivot_longer(
     cols = starts_with("DETERMINACION_"),

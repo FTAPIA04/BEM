@@ -38,7 +38,7 @@ La última actualización del Manual de Normas y Procedimientos de Vigilancia y 
 **Modificaciones implementadas en los ENO**
 
 | Evento | Año de implementación | Modalidad actual de notificación |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | Parotiditis | 2023 | Nominal individualizada |
 | Internaciones por IRAG[^3] | 2023 | Nominal individualizada |
 | Lesiones en el hogar | 2023 | Sólo internaciones - agrupada |
@@ -102,7 +102,7 @@ El mayor porcentaje de casos notificados es de `r evento1` , con el `r porcentaj
 
 [^6]: UC: unidad centinela
 
-Desde SE `r VR_min_SE` /`r VR_min_anio` hasta SE `r SE_max`/`r ANIO_max` .Provincia del Neuquén (n= `r VR_total_evolutivo`)
+Desde SE 1/2024 hasta SE `r SE_max`/`r ANIO_max` .Provincia del Neuquén (n= `r VR_total_evolutivo`)
 
 ```{r, echo=FALSE,fig.width=20, fig.height=8}
 vr_grafico_evolutivo
@@ -255,7 +255,7 @@ grafico_vigilancia_universal_evolutivo
 
 ### Distribución temporal de determinaciones positivas de influenza en pacientes internados y/o fallecidos según tipo y subtipo por semana epidemiológica.
 
-Desde SE 1/2024 hasta SE `r SE_max` /`r ANIO_max`. Provincia del Neuquén (n = `r cant_influenza`).
+Desde SE 16/2024 hasta SE `r SE_max` /`r ANIO_max`. Provincia del Neuquén (n = `r cant_influenza`).
 
 ```{r, echo=FALSE,warning=FALSE,fig.width=33,fig.height=11}
 grafico_influenza
@@ -287,7 +287,7 @@ indicador_diarreas
 
 ```
 
-En las semanas analizadas, se notificaron un total de `r DA_cantidad_SE_BEM` casos de diarrea aguda a nivel provincial. Hubo una disminución del `r DA_variacion_porcentual` % en relación al mismo periodo del año anterior.
+En las semanas analizadas, se notificaron un total de `r DA_cantidad_SE_BEM` casos de diarrea aguda a nivel provincial. Hubo una variación porcentual del `r DA_variacion_porcentual` % en relación al mismo periodo del año anterior.
 
 ### Distribución temporal de casos de diarrea aguda por semana epidemiológica.
 
@@ -310,7 +310,7 @@ DA_grafico_grupoetario_acumulado
 
 ### Diarrea aguda por grupos etarios.
 
-Desde SE `r SE_min` hasta SE `r SE_max`/`r ANIO_max` . Provincia del Neuquén (n = `r DA_cantidad_SE_BEM`)
+Desde SE `r SE_min`/`r ANIO_max`hasta SE `r SE_max`/`r ANIO_max` . Provincia del Neuquén (n = `r DA_cantidad_SE_BEM`)
 
 ```{r, echo=FALSE}
 DA_grafico_grupoetario
@@ -320,7 +320,7 @@ DA_grafico_grupoetario
 
 ### Distribución absoluta de casos de diarrea aguda por región, según grupos de edad.
 
-Desde SE `r SE_min` hasta SE `r SE_max`/`r ANIO_max` . Provincia del Neuquén (n = `r DA_cantidad_SE_BEM`)
+Desde SE `r SE_min`/`r ANIO_max` hasta SE `r SE_max`/`r ANIO_max` . Provincia del Neuquén (n = `r DA_cantidad_SE_BEM`)
 
 ```{r, echo=FALSE, fig.height=3}
 DA_grafico_regiones
